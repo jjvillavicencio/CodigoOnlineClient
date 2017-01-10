@@ -1,0 +1,76 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <!-- Example row of columns -->
+    <div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-10">
+                <h:form id="formulario1">
+                    ID:
+                    <h:inputText id="codigo" value="#{index.id}"></h:inputText>
+                </h:form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h:form>
+                            <div class="row">
+                                <p>
+                                    <span class="glyphicon glyphicon-folder-open" style="font-size: 2em;" aria-hidden="true"></span>
+                                </p>
+                                <p>Abrir</p>
+                            </div>
+                            <div class="row">
+                                <p>
+                                    <span class="glyphicon glyphicon-hdd" style="font-size: 2em;" aria-hidden="true"></span>
+                                </p>
+                                <p>Guardar</p>
+                            </div>                        
+                            <div class="row">
+                                <p>
+                                    <span class="glyphicon glyphicon-retweet" style="font-size: 2em;" aria-hidden="true"></span>
+                                </p>
+                                <p>Comprobar</p>
+                            </div>
+                            <div class="row">
+                                <h:commandLink action="#{index.Ejecutar()}">
+                                    <p>
+                                        <span class="glyphicon glyphicon-triangle-right" style="font-size: 2em;" aria-hidden="true"></span>
+                                    </p>
+                                    <p>Compilar</p>
+
+                                </h:commandLink>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <h:form id="formulario2">
+                    <h:inputTextarea id="my-textarea" class="codemirror-textarea" value="#{index.codigo}"></h:inputTextarea>
+                    <h:commandButton value="Ejecutar" action="#{index.Ejecutar()}"></h:commandButton>
+                </h:form>
+            </div>
+        </div>
+    </div>
+        
+        
+    <div class="col-md-6">
+        <h2>Salida de tu código</h2>
+        <h:form>
+            <h:inputText value="#{index.consola}"></h:inputText>
+        </h:form>
+    </div>
+       
+    <hr/>
+    </div>
+
+</ui:composition>
